@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bridex Global — Connecting Borders and Creating Value</title>
+<meta name="description" content="Bridex Global is a freight forwarding, customs clearance and global trade facilitation partner connecting India to markets worldwide.">
+<link rel="icon" href="assets/icon-web.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-ink:#04263f;
+    --navy:#063355;
+    --navy-2:#0a4066;
+    --teal:#12879a;
+    --teal-bright:#1fb0b8;
+    --sea-green:#2fa87a;
+    --paper:#f4f0e3;
+    --paper-2:#ece5d2;
+    --brass:#b98d46;
+    --brass-light:#d9b876;
+    --ink:#1c2b33;
+    --line:rgba(4,38,63,0.14);
+    --line-light:rgba(244,240,227,0.24);
+    --max:1180px;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Big Shoulders Display', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    margin:0;
+    font-weight:700;
+    color:var(--navy-ink);
+  }
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--brass);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--brass);display:inline-block;}
+  :focus-visible{outline:2px solid var(--brass);outline-offset:3px;}
+
+  /* ================= NAV ================= */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(4,38,63,0.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line-light);
+  }
+  .nav{
+    max-width:var(--max);margin:0 auto;padding:14px 28px;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:24px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;color:var(--paper);}
+  .brand img{height:34px;width:auto;}
+  .brand .word{font-family:'Big Shoulders Display';font-weight:700;font-size:21px;letter-spacing:0.03em;line-height:1;}
+  .brand .word span{display:block;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:0.2em;color:var(--teal-bright);font-weight:500;margin-top:3px;}
+  nav.links{display:flex;gap:34px;}
+  nav.links a{
+    color:var(--paper);opacity:0.75;font-size:14px;font-weight:500;
+    letter-spacing:0.02em;
+    transition:opacity .2s;
+    position:relative;
+  }
+  nav.links a:hover{opacity:1;}
+  .nav-cta{
+    background:var(--brass);color:var(--navy-ink);
+    font-family:'IBM Plex Mono';font-size:12px;font-weight:600;
+    letter-spacing:0.08em;text-transform:uppercase;
+    padding:10px 18px;border-radius:var(--radius);
+    white-space:nowrap;
+    transition:background .2s;
+  }
+  .nav-cta:hover{background:var(--brass-light);}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+  .burger span{width:22px;height:2px;background:var(--paper);display:block;}
+
+  /* ================= HERO ================= */
+  .hero{
+    background:radial-gradient(ellipse at 78% 20%, #0b4e73 0%, var(--navy) 42%, var(--navy-ink) 100%);
+    color:var(--paper);
+    padding:88px 0 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;grid-template-columns:1.05fr 0.95fr;gap:40px;
+    align-items:center;
+    padding-bottom:70px;
+  }
+  .hero h1{
+    color:var(--paper);
+    font-size:clamp(40px,5.4vw,70px);
+    line-height:0.98;
+    margin-bottom:22px;
+  }
+  .hero h1 .accent{color:var(--teal-bright);}
+  .hero p.lead{
+    font-size:17px;line-height:1.65;color:rgba(244,240,227,0.78);
+    max-width:480px;margin-bottom:34px;
+  }
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    padding:14px 26px;border-radius:var(--radius);
+    font-family:'IBM Plex Mono';font-size:13px;font-weight:600;
+    letter-spacing:0.05em;text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:10px;
+    transition:transform .2s, background .2s, border-color .2s;
+    border:1px solid transparent;
+  }
+  .btn-primary{background:var(--brass);color:var(--navy-ink);}
+  .btn-primary:hover{background:var(--brass-light);transform:translateY(-2px);}
+  .btn-ghost{border-color:rgba(244,240,227,0.4);color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--teal-bright);color:var(--teal-bright);transform:translateY(-2px);}
+
+  /* globe/manifest visual */
+  .hero-visual{position:relative;height:440px;}
+  .globe-svg{width:100%;height:100%;}
+  .manifest-card{
+    position:absolute;left:-18px;bottom:6px;
+    width:230px;background:var(--paper);color:var(--navy-ink);
+    border:1px solid var(--navy-ink);
+    padding:16px 18px;
+    box-shadow:10px 10px 0 rgba(0,0,0,0.18);
+    transform:rotate(-3deg);
+  }
+  .manifest-card .mc-head{
+    display:flex;justify-content:space-between;align-items:baseline;
+    border-bottom:1px dashed var(--navy-ink);padding-bottom:8px;margin-bottom:8px;
+  }
+  .manifest-card .mc-head b{font-family:'IBM Plex Mono';font-size:10px;letter-spacing:0.1em;}
+  .manifest-card .mc-head span{font-family:'IBM Plex Mono';font-size:10px;color:var(--teal);}
+  .manifest-card .mc-row{
+    display:flex;justify-content:space-between;
+    font-family:'IBM Plex Mono';font-size:10.5px;padding:3px 0;color:#3a4a52;
+  }
+  .manifest-card .mc-row b{color:var(--navy-ink);}
+  .manifest-card .stamp{
+    position:absolute;right:10px;bottom:10px;
+    width:52px;height:52px;border-radius:50%;
+    border:2px solid var(--sea-green);color:var(--sea-green);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono';font-size:8px;font-weight:700;
+    letter-spacing:0.05em;text-align:center;line-height:1.2;
+    transform:rotate(12deg);opacity:0.85;
+  }
+
+  /* ================= MANIFEST STRIP ================= */
+  .strip{
+    background:var(--navy-ink);
+    border-top:1px solid var(--line-light);
+    border-bottom:1px solid var(--line-light);
+  }
+  .strip .wrap{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    padding:26px 28px;
+  }
+  .strip .item{
+    padding:0 24px;border-left:1px dashed rgba(244,240,227,0.3);
+    color:var(--paper);
+  }
+  .strip .item:first-child{border-left:none;padding-left:0;}
+  .strip .num{
+    font-family:'Big Shoulders Display';font-size:38px;font-weight:700;
+    color:var(--teal-bright);line-height:1;
+  }
+  .strip .label{
+    font-family:'IBM Plex Mono';font-size:10.5px;letter-spacing:0.08em;
+    text-transform:uppercase;color:rgba(244,240,227,0.6);margin-top:6px;
+  }
+
+  /* ================= SECTION generic ================= */
+  section{padding:96px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(30px,3.6vw,44px);line-height:1.02;}
+  .section-head p{font-size:16px;color:#4c5a61;margin-top:14px;line-height:1.6;}
+
+  /* ================= ABOUT ================= */
+  .about{background:var(--paper);}
+  .about .wrap{display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:start;}
+  .waybill{
+    background:#fff;border:1px solid var(--navy-ink);padding:24px;
+    position:relative;
+  }
+  .waybill::before{
+    content:"";position:absolute;inset:8px;border:1px dashed rgba(4,38,63,0.35);pointer-events:none;
+  }
+  .waybill .wb-top{
+    display:flex;justify-content:space-between;border-bottom:2px solid var(--navy-ink);
+    padding-bottom:10px;margin-bottom:14px;
+  }
+  .waybill .wb-top b{font-family:'IBM Plex Mono';font-size:11px;letter-spacing:0.1em;}
+  .waybill .wb-top .no{color:var(--brass);}
+  .waybill .field{margin-bottom:12px;}
+  .waybill .field label{
+    display:block;font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:0.1em;
+    text-transform:uppercase;color:#8a8168;margin-bottom:3px;
+  }
+  .waybill .field .val{font-family:'IBM Plex Mono';font-size:13px;color:var(--navy-ink);font-weight:500;}
+  .waybill .route-line{
+    display:flex;align-items:center;gap:8px;margin:16px 0;
+    font-family:'IBM Plex Mono';font-size:12px;color:var(--navy);
+  }
+  .waybill .route-line .dot{width:7px;height:7px;border-radius:50%;background:var(--sea-green);}
+  .waybill .route-line .dash{flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--navy) 0 4px,transparent 4px 8px);}
+
+  .about-copy h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:20px;line-height:1.02;}
+  .about-copy p{font-size:16px;line-height:1.7;color:#3f4b52;margin-bottom:18px;max-width:560px;}
+  .value-list{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .value-list li{
+    border-top:2px solid var(--navy-ink);padding-top:10px;
+  }
+  .value-list li b{display:block;font-family:'Big Shoulders Display';font-size:18px;color:var(--navy-ink);margin-bottom:4px;}
+  .value-list li span{font-size:13.5px;color:#5b6870;line-height:1.5;}
+
+  /* ================= SERVICES (manifest ledger) ================= */
+  .services{background:var(--navy-ink);color:var(--paper);}
+  .services .section-head h2{color:var(--paper);}
+  .services .section-head p{color:rgba(244,240,227,0.65);}
+  .ledger{border-top:1px solid rgba(244,240,227,0.25);}
+  .ledger-row{
+    display:grid;grid-template-columns:110px 1fr 1.3fr 90px;
+    gap:20px;align-items:center;
+    padding:26px 4px;
+    border-bottom:1px solid rgba(244,240,227,0.16);
+    transition:background .2s;
+  }
+  .ledger-row:hover{background:rgba(244,240,227,0.04);}
+  .ledger-row .lane{
+    font-family:'IBM Plex Mono';font-size:12px;color:var(--teal-bright);letter-spacing:0.05em;
+  }
+  .ledger-row h3{font-size:24px;color:var(--paper);font-weight:600;letter-spacing:0.01em;}
+  .ledger-row p{font-size:14px;color:rgba(244,240,227,0.6);line-height:1.55;margin:0;}
+  .ledger-row .arrow{
+    font-family:'IBM Plex Mono';font-size:12px;color:var(--brass-light);
+    justify-self:end;display:flex;align-items:center;gap:6px;
+  }
+
+  /* ================= TRADE LANES / MAP ================= */
+  .lanes{background:var(--paper);}
+  .lanes .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .lane-map{background:var(--navy);border:1px solid var(--navy-ink);padding:20px;}
+  .schedule{border-collapse:collapse;width:100%;}
+  .schedule th{
+    text-align:left;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:0.1em;
+    text-transform:uppercase;color:#8a8168;padding:0 0 10px;border-bottom:2px solid var(--navy-ink);
+  }
+  .schedule td{
+    font-family:'IBM Plex Mono';font-size:12.5px;padding:12px 0;
+    border-bottom:1px dashed var(--line);color:var(--navy-ink);
+  }
+  .schedule td.port{font-weight:600;}
+  .schedule td.status{color:var(--sea-green);}
+
+  /* ================= WHY / STAMPS ================= */
+  .why{background:var(--paper-2);}
+  .stamp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--navy-ink);}
+  .stamp-card{
+    background:var(--paper-2);padding:34px 28px;min-height:190px;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .stamp-ring{
+    width:46px;height:46px;border-radius:50%;border:2px solid var(--navy-ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono';font-weight:700;font-size:13px;color:var(--navy-ink);
+  }
+  .stamp-card h4{font-size:20px;font-weight:600;color:var(--navy-ink);}
+  .stamp-card p{font-size:13.5px;color:#5b6870;line-height:1.55;margin:0;}
+
+  /* ================= CONTACT ================= */
+  .contact{background:var(--navy-ink);color:var(--paper);}
+  .contact .section-head h2{color:var(--paper);}
+  .contact .section-head p{color:rgba(244,240,227,0.65);}
+  .contact .wrap{display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;}
+  .contact-info .ci-block{margin-bottom:28px;}
+  .contact-info .ci-block b{
+    display:block;font-family:'IBM Plex Mono';font-size:10.5px;letter-spacing:0.1em;
+    text-transform:uppercase;color:var(--teal-bright);margin-bottom:8px;
+  }
+  .contact-info .ci-block div{font-size:16px;color:var(--paper);line-height:1.6;}
+  .contact-info .socials{display:flex;gap:14px;margin-top:8px;}
+  .contact-info .socials a{
+    width:38px;height:38px;border:1px solid rgba(244,240,227,0.35);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:14px;
+    transition:border-color .2s, color .2s;color:var(--paper);
+  }
+  .contact-info .socials a:hover{border-color:var(--teal-bright);color:var(--teal-bright);}
+
+  form.form-manifest{
+    background:var(--paper);color:var(--navy-ink);padding:32px;
+    border:1px solid rgba(244,240,227,0.3);
+  }
+  form.form-manifest .form-head{
+    display:flex;justify-content:space-between;border-bottom:2px solid var(--navy-ink);
+    padding-bottom:12px;margin-bottom:20px;
+  }
+  form.form-manifest .form-head b{font-family:'IBM Plex Mono';font-size:11px;letter-spacing:0.1em;}
+  form.form-manifest .form-head span{font-family:'IBM Plex Mono';font-size:11px;color:var(--brass);}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .field-group{margin-bottom:16px;}
+  .field-group label{
+    display:block;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:0.1em;
+    text-transform:uppercase;color:#8a8168;margin-bottom:6px;
+  }
+  .field-group input,.field-group textarea{
+    width:100%;border:none;border-bottom:1px solid rgba(4,38,63,0.35);
+    background:transparent;font-family:'IBM Plex Sans';font-size:14.5px;
+    padding:8px 2px;color:var(--navy-ink);
+  }
+  .field-group input:focus,.field-group textarea:focus{
+    outline:none;border-bottom-color:var(--brass);
+  }
+  .field-group textarea{resize:vertical;min-height:80px;}
+  .submit-btn{
+    margin-top:8px;background:var(--navy-ink);color:var(--paper);
+    padding:14px 30px;border:none;font-family:'IBM Plex Mono';font-size:13px;
+    font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;
+    transition:background .2s;
+  }
+  .submit-btn:hover{background:var(--navy-2);}
+
+  /* ================= FOOTER ================= */
+  footer{background:var(--navy);color:rgba(244,240,227,0.7);padding:50px 0 24px;}
+  footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;}
+  .foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .foot-brand img{height:28px;}
+  .foot-brand span{font-family:'Big Shoulders Display';font-weight:700;font-size:18px;color:var(--paper);}
+  footer p.tag{font-size:13px;max-width:280px;line-height:1.6;}
+  footer h5{
+    font-family:'IBM Plex Mono';font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--teal-bright);margin-bottom:14px;font-weight:600;
+  }
+  footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;}
+  footer ul a{font-size:14px;color:rgba(244,240,227,0.75);transition:color .2s;}
+  footer ul a:hover{color:var(--paper);}
+  .foot-bottom{
+    max-width:var(--max);margin:40px auto 0;padding:20px 28px 0;
+    border-top:1px solid rgba(244,240,227,0.15);
+    display:flex;justify-content:space-between;font-family:'IBM Plex Mono';font-size:11.5px;
+    color:rgba(244,240,227,0.5);flex-wrap:wrap;gap:10px;
+  }
+
+  /* ================= MOTION ================= */
+  @keyframes dash{to{stroke-dashoffset:-200;}}
+  .route-arc{stroke-dasharray:6 6;animation:dash 8s linear infinite;}
+  @keyframes spin-slow{to{transform:rotate(360deg);}}
+  .globe-ring{transform-origin:center;animation:spin-slow 60s linear infinite;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+  .reveal{animation:fadeUp .7s ease both;}
+
+  @media (prefers-reduced-motion: reduce){
+    .route-arc,.globe-ring{animation:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width:980px){
+    nav.links{display:none;}
+    .burger{display:flex;}
+    .hero .wrap{grid-template-columns:1fr;padding-bottom:50px;}
+    .hero-visual{height:340px;order:-1;margin-bottom:20px;}
+    .manifest-card{left:0;}
+    .strip .wrap{grid-template-columns:1fr 1fr;row-gap:22px;}
+    .strip .item:nth-child(3){border-left:none;padding-left:0;}
+    .about .wrap{grid-template-columns:1fr;gap:40px;}
+    .value-list{grid-template-columns:1fr;}
+    .ledger-row{grid-template-columns:70px 1fr;grid-template-areas:"lane lane" "title title" "desc desc" "arrow arrow";row-gap:8px;}
+    .ledger-row .lane{grid-area:lane;}
+    .ledger-row h3{grid-area:title;}
+    .ledger-row p{grid-area:desc;}
+    .ledger-row .arrow{grid-area:arrow;justify-self:start;}
+    .lanes .wrap{grid-template-columns:1fr;}
+    .stamp-grid{grid-template-columns:1fr 1fr;}
+    .contact .wrap{grid-template-columns:1fr;}
+    .grid-2{grid-template-columns:1fr;}
+    footer .wrap{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:560px){
+    .strip .wrap{grid-template-columns:1fr;}
+    .strip .item{border-left:none;padding-left:0;border-top:1px dashed rgba(244,240,227,0.3);padding-top:16px;}
+    .strip .item:first-child{border-top:none;padding-top:0;}
+    .stamp-grid{grid-template-columns:1fr;}
+    footer .wrap{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#hero" class="brand">
+      <img src="assets/icon-web.png" alt="Bridex Global mark">
+      <span class="word">BRIDEX<br>GLOBAL<span>CONNECTING BORDERS</span></span>
+    </a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#lanes">Trade Lanes</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Book a Consultation</a>
+    <button class="burger" aria-label="Open menu" onclick="document.querySelector('nav.links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">FREIGHT · CUSTOMS · GLOBAL TRADE</div>
+      <h1>Connecting<br>Borders. <span class="accent">Creating</span><br>Value.</h1>
+      <p class="lead">Bridex Global moves consignments from Indian origin to global destination — freight, customs clearance and compliance handled end to end, so your cargo clears every border on schedule.</p>
+      <div class="btn-row">
+        <a href="#contact" class="btn btn-primary">Start a Consignment →</a>
+        <a href="#lanes" class="btn btn-ghost">View Trade Lanes</a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" style="animation-delay:.15s">
+      <svg class="globe-svg" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated globe showing trade routes">
+        <defs>
+          <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1fb0b8"/>
+            <stop offset="100%" stop-color="#2fa87a"/>
+          </linearGradient>
+        </defs>
+        <circle cx="210" cy="210" r="150" fill="none" stroke="rgba(244,240,227,0.18)" stroke-width="1"/>
+        <g class="globe-ring">
+          <ellipse cx="210" cy="210" rx="150" ry="55" fill="none" stroke="rgba(31,176,184,0.35)" stroke-width="1"/>
+          <ellipse cx="210" cy="210" rx="150" ry="105" fill="none" stroke="rgba(31,176,184,0.22)" stroke-width="1"/>
+          <ellipse cx="210" cy="210" rx="55" ry="150" fill="none" stroke="rgba(244,240,227,0.14)" stroke-width="1"/>
+          <ellipse cx="210" cy="210" rx="105" ry="150" fill="none" stroke="rgba(244,240,227,0.1)" stroke-width="1"/>
+        </g>
+        <path id="routeA" class="route-arc" d="M 90 260 Q 210 100 340 200" fill="none" stroke="url(#arcGrad)" stroke-width="2"/>
+        <path class="route-arc" d="M 110 150 Q 210 320 330 260" fill="none" stroke="rgba(217,184,118,0.55)" stroke-width="1.5" style="animation-delay:-3s"/>
+        <circle cx="90" cy="260" r="4" fill="#f4f0e3"/>
+        <circle cx="340" cy="200" r="4" fill="#f4f0e3"/>
+        <circle cx="110" cy="150" r="3" fill="#d9b876"/>
+        <circle cx="330" cy="260" r="3" fill="#d9b876"/>
+        <text x="60" y="285" fill="rgba(244,240,227,0.55)" font-family="IBM Plex Mono" font-size="9">INMAA</text>
+        <text x="315" y="190" fill="rgba(244,240,227,0.55)" font-family="IBM Plex Mono" font-size="9">AEJEA</text>
+        <text x="60" y="140" fill="rgba(217,184,118,0.5)" font-family="IBM Plex Mono" font-size="9">INNSA</text>
+        <text x="300" y="278" fill="rgba(217,184,118,0.5)" font-family="IBM Plex Mono" font-size="9">SGSIN</text>
+        <g>
+          <circle r="5" fill="#f4f0e3">
+            <animateMotion dur="6s" repeatCount="indefinite" path="M 90 260 Q 210 100 340 200"/>
+          </circle>
+        </g>
+      </svg>
+      <div class="manifest-card">
+        <div class="mc-head"><b>WAYBILL · MRN</b><span>#BX-70241</span></div>
+        <div class="mc-row"><span>Origin</span><b>Chennai, IN</b></div>
+        <div class="mc-row"><span>Destination</span><b>Jebel Ali, AE</b></div>
+        <div class="mc-row"><span>Mode</span><b>Ocean · FCL</b></div>
+        <div class="mc-row"><span>Status</span><b style="color:#2fa87a">Cleared</b></div>
+        <div class="stamp">CUSTOMS<br>CLEARED</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="wrap">
+      <div class="item"><div class="num">42</div><div class="label">Countries Served</div></div>
+      <div class="item"><div class="num">180+</div><div class="label">Active Trade Lanes</div></div>
+      <div class="item"><div class="num">98.6%</div><div class="label">On-Time Clearance</div></div>
+      <div class="item"><div class="num">12K+</div><div class="label">TEU Handled / Year</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="waybill reveal">
+      <div class="wb-top"><b>BILL OF LADING</b><b class="no">No. BX-2019</b></div>
+      <div class="field"><label>Consignor</label><div class="val">Bridex Global Pvt. Ltd.</div></div>
+      <div class="field"><label>Established</label><div class="val">Salem, Tamil Nadu, India</div></div>
+      <div class="route-line"><span class="dot"></span><span class="dash"></span><span class="dot" style="background:var(--brass)"></span></div>
+      <div class="field"><label>Registered With</label><div class="val">APEDA · FSSAI · AEO</div></div>
+      <div class="field"><label>Remarks</label><div class="val">Founded to close the gap between Indian producers and international buyers.</div></div>
+    </div>
+
+    <div class="about-copy reveal" style="animation-delay:.1s">
+      <div class="eyebrow" style="color:var(--teal)">ABOUT BRIDEX GLOBAL</div>
+      <h2>The paperwork,<br>logistics and borders —<br>handled for you.</h2>
+      <p>Bridex Global sits between origin and destination: we forward freight, clear customs, and manage the compliance trail so a shipment leaving an Indian port lands exactly where — and when — it's supposed to. One point of contact, from booking to bill of lading.</p>
+      <p>We work as an extension of your supply chain, not a middleman — flagging risk before it costs you a sailing, and keeping every stakeholder reading from the same manifest.</p>
+      <ul class="value-list">
+        <li><b>Full Visibility</b><span>Live shipment status from origin gate to final port of discharge.</span></li>
+        <li><b>Compliant by Design</b><span>Documentation built to clear customs the first time, every time.</span></li>
+        <li><b>Rate Transparency</b><span>Freight and duty costs laid out before you commit to a lane.</span></li>
+        <li><b>One Desk</b><span>A single coordinator across forwarding, clearance and delivery.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">CARGO MANIFEST</div>
+      <h2>What we move for you</h2>
+      <p>Six services, one manifest — pick a lane or run the full route from sourcing to final-mile delivery.</p>
+    </div>
+    <div class="ledger">
+      <div class="ledger-row"><div class="lane">LANE 01</div><h3>Ocean &amp; Air Freight</h3><p>FCL, LCL and air consolidation booked across carrier alliances for the best transit-to-cost balance.</p><div class="arrow">Details →</div></div>
+      <div class="ledger-row"><div class="lane">LANE 02</div><h3>Customs Clearance</h3><p>Import/export documentation, HS classification and duty filing handled by licensed clearing agents.</p><div class="arrow">Details →</div></div>
+      <div class="ledger-row"><div class="lane">LANE 03</div><h3>Warehousing &amp; Distribution</h3><p>Bonded and non-bonded storage with pick-pack-dispatch at key Indian and destination ports.</p><div class="arrow">Details →</div></div>
+      <div class="ledger-row"><div class="lane">LANE 04</div><h3>Global Sourcing</h3><p>Vendor vetting and procurement across agricultural, industrial and packaged goods categories.</p><div class="arrow">Details →</div></div>
+      <div class="ledger-row"><div class="lane">LANE 05</div><h3>Trade Documentation</h3><p>Certificates of origin, letters of credit and compliance advisory kept audit-ready.</p><div class="arrow">Details →</div></div>
+      <div class="ledger-row"><div class="lane">LANE 06</div><h3>Project &amp; Bulk Cargo</h3><p>Break-bulk, oversized and bulk shipments planned with route surveys and permits in hand.</p><div class="arrow">Details →</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="lanes" id="lanes">
+  <div class="wrap">
+    <div class="lane-map reveal">
+      <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of active trade lanes">
+        <rect x="0" y="0" width="420" height="300" fill="none"/>
+        <g stroke="rgba(244,240,227,0.12)" stroke-width="1">
+          <line x1="0" y1="60" x2="420" y2="60"/><line x1="0" y1="120" x2="420" y2="120"/>
+          <line x1="0" y1="180" x2="420" y2="180"/><line x1="0" y1="240" x2="420" y2="240"/>
+        </g>
+        <path class="route-arc" d="M 60 150 Q 150 60 240 110" fill="none" stroke="#1fb0b8" stroke-width="1.6"/>
+        <path class="route-arc" d="M 60 150 Q 150 240 260 200" fill="none" stroke="#2fa87a" stroke-width="1.6" style="animation-delay:-2s"/>
+        <path class="route-arc" d="M 60 150 Q 220 210 360 90" fill="none" stroke="#d9b876" stroke-width="1.6" style="animation-delay:-5s"/>
+        <circle cx="60" cy="150" r="5" fill="#f4f0e3"/>
+        <circle cx="240" cy="110" r="3.5" fill="#1fb0b8"/>
+        <circle cx="260" cy="200" r="3.5" fill="#2fa87a"/>
+        <circle cx="360" cy="90" r="3.5" fill="#d9b876"/>
+        <text x="40" y="172" fill="#f4f0e3" font-family="IBM Plex Mono" font-size="10">IN</text>
+        <text x="248" y="102" fill="#1fb0b8" font-family="IBM Plex Mono" font-size="9">AE</text>
+        <text x="266" y="220" fill="#2fa87a" font-family="IBM Plex Mono" font-size="9">SG</text>
+        <text x="368" y="82" fill="#d9b876" font-family="IBM Plex Mono" font-size="9">NL</text>
+      </svg>
+    </div>
+    <div class="reveal" style="animation-delay:.1s">
+      <div class="eyebrow" style="color:var(--teal)">GLOBAL NETWORK</div>
+      <h2 style="font-size:clamp(28px,3.2vw,38px);margin-bottom:20px;">Active sailing schedule</h2>
+      <table class="schedule">
+        <thead><tr><th>Origin</th><th>Destination</th><th>Mode</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td class="port">Chennai</td><td>Dubai, UAE</td><td>Ocean · FCL</td><td class="status">On Schedule</td></tr>
+          <tr><td class="port">Nhava Sheva</td><td>Singapore</td><td>Ocean · LCL</td><td class="status">On Schedule</td></tr>
+          <tr><td class="port">Chennai</td><td>Colombo, LK</td><td>Ocean · FCL</td><td class="status">On Schedule</td></tr>
+          <tr><td class="port">Bengaluru</td><td>Rotterdam, NL</td><td>Air Cargo</td><td class="status">On Schedule</td></tr>
+          <tr><td class="port">Tuticorin</td><td>Klang, MY</td><td>Ocean · FCL</td><td class="status">On Schedule</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap" style="margin-bottom:0;">
+    <div class="section-head reveal">
+      <div class="eyebrow">CERTIFIED &amp; COMPLIANT</div>
+      <h2>Why shippers choose Bridex</h2>
+      <p>Every consignment carries the same standard, stamped and verifiable at each stage of the route.</p>
+    </div>
+  </div>
+  <div class="stamp-grid">
+    <div class="stamp-card"><div class="stamp-ring">01</div><h4>Rate Certainty</h4><p>Freight and duty quoted upfront — no surprise line items at destination.</p></div>
+    <div class="stamp-card"><div class="stamp-ring">02</div><h4>First-Pass Clearance</h4><p>Documentation built to pass customs review without rework or delay.</p></div>
+    <div class="stamp-card"><div class="stamp-ring">03</div><h4>Real-Time Tracking</h4><p>Status updates at every checkpoint, from gate-in to final delivery.</p></div>
+    <div class="stamp-card"><div class="stamp-ring">04</div><h4>Ethical Sourcing</h4><p>Vetted vendors and traceable origin documentation on every lane.</p></div>
+    <div class="stamp-card"><div class="stamp-ring">05</div><h4>Licensed Network</h4><p>AEO-certified partners and bonded facilities at every major port.</p></div>
+    <div class="stamp-card"><div class="stamp-ring">06</div><h4>One Coordinator</h4><p>A single point of contact who owns your shipment end to end.</p></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">GET IN TOUCH</div>
+      <h2 style="color:var(--paper);font-size:clamp(28px,3.4vw,40px);margin-bottom:20px;">Book a consignment consultation</h2>
+      <p style="color:rgba(244,240,227,0.65);font-size:15.5px;line-height:1.65;max-width:420px;margin-bottom:32px;">Tell us the origin, destination and cargo type — we'll map the lane and send a quote within one business day.</p>
+
+      <div class="contact-info">
+        <div class="ci-block"><b>Office</b><div>PSS Complex, Amman Nagar,<br>Ammampalayam, Attur, Salem – 636141</div></div>
+        <div class="ci-block"><b>Direct Line</b><div>+91 90000 00000</div></div>
+        <div class="ci-block"><b>Email</b><div>hello@bridexglobal.com</div></div>
+        <div class="ci-block">
+          <b>Follow the Journey</b>
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="WhatsApp">wa</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="form-manifest reveal" style="animation-delay:.1s" onsubmit="event.preventDefault(); this.querySelector('.submit-btn').textContent='Manifest Sent ✓';">
+      <div class="form-head"><b>SHIPPER ENQUIRY FORM</b><span>Ref: NEW-LEAD</span></div>
+      <div class="grid-2">
+        <div class="field-group"><label>Full Name</label><input type="text" required placeholder="Your name"></div>
+        <div class="field-group"><label>Company</label><input type="text" placeholder="Company name"></div>
+      </div>
+      <div class="grid-2">
+        <div class="field-group"><label>Email</label><input type="email" required placeholder="you@company.com"></div>
+        <div class="field-group"><label>Phone</label><input type="tel" placeholder="+91"></div>
+      </div>
+      <div class="grid-2">
+        <div class="field-group"><label>Origin</label><input type="text" placeholder="e.g. Chennai, IN"></div>
+        <div class="field-group"><label>Destination</label><input type="text" placeholder="e.g. Jebel Ali, AE"></div>
+      </div>
+      <div class="field-group"><label>Cargo Details</label><textarea placeholder="Commodity, volume, preferred mode..."></textarea></div>
+      <button type="submit" class="submit-btn">Submit Enquiry →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="foot-brand"><img src="assets/icon-web.png" alt="Bridex Global"><span>BRIDEX GLOBAL</span></div>
+      <p class="tag">Connecting borders and creating value — freight forwarding, customs clearance and trade facilitation from India to the world.</p>
+    </div>
+    <div>
+      <h5>Navigate</h5>
+      <ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#lanes">Trade Lanes</a></li><li><a href="#why">Why Us</a></li></ul>
+    </div>
+    <div>
+      <h5>Services</h5>
+      <ul><li><a href="#services">Freight Forwarding</a></li><li><a href="#services">Customs Clearance</a></li><li><a href="#services">Warehousing</a></li><li><a href="#services">Sourcing</a></li></ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul><li><a href="#contact">Attur, Salem, India</a></li><li><a href="#contact">+91 90000 00000</a></li><li><a href="#contact">hello@bridexglobal.com</a></li></ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Bridex Global. All rights reserved.</span>
+    <span>REGISTERED · APEDA · FSSAI · AEO</span>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle style injection
+  const style = document.createElement('style');
+  style.textContent = `
+    nav.links.open{
+      display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;
+      background:var(--navy-ink,#04263f);padding:20px 28px;gap:18px;border-top:1px solid rgba(244,240,227,0.15);
+    }
+  `;
+  document.head.appendChild(style);
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.style.animationPlayState='running'; io.unobserve(e.target); }
+    });
+  },{threshold:0.15});
+  document.querySelectorAll('.section-head, .ledger-row, .stamp-card').forEach(el=>{
+    el.classList.add('reveal');
+    el.style.animationPlayState='paused';
+    io.observe(el);
+  });
+</script>
+
+</body>
+</html>
