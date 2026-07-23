@@ -64,6 +64,7 @@ header{
   gap:24px;
 }
 .brand{display:flex;align-items:center;gap:12px;color:var(--paper);}
+.brand img{height:40px;width:auto;flex:none;display:block;}
 .brand .mark{
   width:38px;height:38px;border-radius:50%;flex:none;
   background:conic-gradient(from 200deg, var(--teal-bright), var(--sea-green), var(--teal-bright));
@@ -267,6 +268,38 @@ section{padding:96px 0;}
 .value-list li b{display:block;font-family:'Fraunces';font-size:17px;color:var(--navy-ink);margin-bottom:4px;}
 .value-list li span{font-size:13.5px;color:#5b6870;line-height:1.5;}
 
+/* ================= COMMITMENT CHECKLIST ================= */
+.commit-list{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;
+}
+.commit-list li{
+  display:flex;align-items:center;gap:10px;
+  font-family:'IBM Plex Mono';font-size:13.5px;color:var(--navy-ink);
+  padding-bottom:10px;border-bottom:1px dashed var(--line);
+}
+.commit-list li::before{
+  content:"✓";flex:none;width:20px;height:20px;border-radius:50%;
+  background:var(--sea-green);color:var(--paper);
+  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;
+}
+
+/* ================= VISION / MISSION SPLIT ================= */
+.split-cards{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--navy-ink);}
+.split-card{background:var(--paper);padding:36px 34px;}
+.split-card.dark{background:var(--navy-ink);color:var(--paper);}
+.split-card .eyebrow{margin-bottom:14px;}
+.split-card h3{font-size:24px;margin-bottom:14px;color:var(--navy-ink);}
+.split-card.dark h3{color:var(--paper);}
+.split-card p{font-size:15px;line-height:1.7;color:#3f4b52;margin:0 0 14px;}
+.split-card.dark p{color:rgba(244,240,227,0.75);}
+.split-card ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+.split-card ul li{
+  font-family:'IBM Plex Mono';font-size:12.5px;padding-left:16px;position:relative;color:#3f4b52;
+}
+.split-card.dark ul li{color:rgba(244,240,227,0.75);}
+.split-card ul li::before{content:"—";position:absolute;left:0;color:var(--brass);}
+
 /* ================= SOURCING TABLE ================= */
 .lanes{background:var(--paper);}
 .lanes .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
@@ -310,6 +343,7 @@ section{padding:96px 0;}
 /* ================= PROCESS / WHY (stamps) ================= */
 .why{background:var(--paper-2);}
 .stamp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--navy-ink);}
+.stamp-grid.cols-3{grid-template-columns:repeat(3,1fr);}
 .stamp-card{
   background:var(--paper-2);padding:34px 26px;min-height:180px;
   display:flex;flex-direction:column;gap:14px;
@@ -436,6 +470,7 @@ form.form-manifest .form-head span{font-family:'IBM Plex Mono';font-size:11px;co
 footer{background:var(--navy);color:rgba(244,240,227,0.7);padding:50px 0 24px;}
 footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;}
 .foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.foot-brand img{height:34px;width:auto;flex:none;display:block;}
 .foot-brand .mark{
   width:32px;height:32px;border-radius:50%;flex:none;
   background:conic-gradient(from 200deg, var(--teal-bright), var(--sea-green), var(--teal-bright));
@@ -509,10 +544,13 @@ footer ul a:hover{color:var(--paper);}
   .ledger-row .arrow{grid-area:arrow;justify-self:start;}
   .lanes .wrap{grid-template-columns:1fr;}
   .stamp-grid{grid-template-columns:1fr 1fr;}
+  .stamp-grid.cols-3{grid-template-columns:1fr 1fr;}
   .leader .wrap{grid-template-columns:1fr;}
   .testi-grid{grid-template-columns:1fr;}
   .contact .wrap{grid-template-columns:1fr;}
   .grid-2{grid-template-columns:1fr;}
+  .commit-list{grid-template-columns:1fr;}
+  .split-cards{grid-template-columns:1fr;}
   footer .wrap{grid-template-columns:1fr 1fr;}
   .cta-band .wrap{flex-direction:column;align-items:flex-start;}
 }
@@ -521,5 +559,6 @@ footer ul a:hover{color:var(--paper);}
   .strip .item{border-left:none;padding-left:0;border-top:1px dashed rgba(244,240,227,0.3);padding-top:16px;}
   .strip .item:first-child{border-top:none;padding-top:0;}
   .stamp-grid{grid-template-columns:1fr;}
+  .stamp-grid.cols-3{grid-template-columns:1fr;}
   footer .wrap{grid-template-columns:1fr;}
 }
