@@ -268,6 +268,60 @@ section{padding:96px 0;}
 .value-list li b{display:block;font-family:'Fraunces';font-size:17px;color:var(--navy-ink);margin-bottom:4px;}
 .value-list li span{font-size:13.5px;color:#5b6870;line-height:1.5;}
 
+/* ================= SHOWCASE (export categories) ================= */
+.showcase{background:var(--paper);}
+.showcase-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--navy-ink);margin-top:8px;}
+.showcase-card{background:var(--paper);}
+.showcase-card .img-wrap{
+  width:100%;aspect-ratio:16/10;background:var(--navy);
+  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+}
+.showcase-card .img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+.showcase-card .img-wrap svg{width:62%;height:62%;}
+.showcase-card .img-wrap .tag{
+  position:absolute;top:12px;left:12px;font-family:'IBM Plex Mono';font-size:9px;
+  letter-spacing:0.1em;text-transform:uppercase;color:var(--paper);
+  background:rgba(4,38,63,0.65);padding:5px 10px;border-radius:2px;z-index:1;
+}
+.showcase-card .cap{padding:22px 24px;}
+.showcase-card .cap h4{font-size:20px;margin-bottom:6px;color:var(--navy-ink);}
+.showcase-card .cap p{font-size:13.5px;color:#5b6870;line-height:1.55;margin:0;}
+
+/* ================= OFFICE BANNER ================= */
+.office-banner{display:grid;grid-template-columns:1.15fr 0.85fr;gap:2px;background:var(--navy-ink);margin-top:8px;}
+.office-banner .img-wrap{
+  width:100%;min-height:280px;background:var(--navy);
+  display:flex;align-items:center;justify-content:center;position:relative;
+}
+.office-banner .img-wrap svg{width:78%;height:78%;}
+.office-banner .img-wrap .tag{
+  position:absolute;top:16px;left:16px;font-family:'IBM Plex Mono';font-size:9px;
+  letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,240,227,0.5);
+}
+.office-banner .info{background:var(--paper);padding:32px 30px;display:flex;flex-direction:column;justify-content:center;}
+.office-banner .info h3{font-size:22px;margin-bottom:12px;color:var(--navy-ink);}
+.office-banner .info p{font-size:14px;line-height:1.65;color:#3f4b52;margin:0 0 16px;}
+.office-banner .info .addr{
+  font-family:'IBM Plex Mono';font-size:12.5px;color:var(--navy-ink);
+  border-top:1px dashed var(--line);padding-top:14px;line-height:1.7;
+}
+
+/* ================= CEO PLACEHOLDER PHOTO ================= */
+.ceo-photo{
+  width:150px;aspect-ratio:3/4;border-radius:3px;
+  background:linear-gradient(160deg, var(--navy) 0%, var(--navy-ink) 100%);
+  border:1px solid rgba(244,240,227,0.22);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;margin-bottom:18px;overflow:hidden;
+}
+.ceo-photo svg{width:56%;height:56%;color:rgba(244,240,227,0.38);}
+.ceo-photo .tag{
+  position:absolute;bottom:0;left:0;right:0;padding:6px 0;
+  background:rgba(4,38,63,0.75);
+  font-family:'IBM Plex Mono';font-size:7.5px;letter-spacing:0.08em;text-transform:uppercase;
+  color:rgba(244,240,227,0.6);text-align:center;
+}
+
 /* ================= COMMITMENT CHECKLIST ================= */
 .commit-list{
   list-style:none;margin:0;padding:0;
@@ -551,6 +605,9 @@ footer ul a:hover{color:var(--paper);}
   .grid-2{grid-template-columns:1fr;}
   .commit-list{grid-template-columns:1fr;}
   .split-cards{grid-template-columns:1fr;}
+  .showcase-grid{grid-template-columns:1fr 1fr;}
+  .office-banner{grid-template-columns:1fr;}
+  .office-banner .img-wrap{min-height:200px;}
   footer .wrap{grid-template-columns:1fr 1fr;}
   .cta-band .wrap{flex-direction:column;align-items:flex-start;}
 }
@@ -560,5 +617,6 @@ footer ul a:hover{color:var(--paper);}
   .strip .item:first-child{border-top:none;padding-top:0;}
   .stamp-grid{grid-template-columns:1fr;}
   .stamp-grid.cols-3{grid-template-columns:1fr;}
+  .showcase-grid{grid-template-columns:1fr;}
   footer .wrap{grid-template-columns:1fr;}
 }
